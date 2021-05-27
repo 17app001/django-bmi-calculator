@@ -1,0 +1,18 @@
+{% extends 'calculator/base.html' %}
+
+{%  block title %}
+    BMI Calculator
+{% endblock %}
+
+{% block content %}
+<br>
+    <h1>BMI 計算機APP</h1>
+    <form class="form-control form-control-lg"  method="post" action="{% url 'calculator' %}">
+        {% csrf_token %}
+        姓名：<input class="form-control text-center" type="text" name="name">
+        年齡：<input class="form-control text-center" type="text" name="age">
+        身高：<input class="form-control text-center" type="text" name="height">
+        體重：<input class="form-control text-center" type="text" name="weight">
+        <br><input class="btn btn-primary text-center" type="submit" value="計算">
+    </form>
+{% endblock %}

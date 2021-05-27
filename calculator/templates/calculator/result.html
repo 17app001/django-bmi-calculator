@@ -1,0 +1,20 @@
+{% extends 'calculator/base.html' %}
+
+{%  block title %}
+    BMI Result
+{% endblock %}
+
+{% block content %}
+<br>
+    {% if bmi is None %}
+        <h1 class="alert alert-warning">Input error!</h1>
+    {% else %}
+        <h1>{{ name }}</h1>
+        <h2 class="alert alert-success"> Your BMI is: {{ bmi }} </h2>      
+    {% endif %}
+
+    <!-- <a href="{% url 'home' %}" class="btn btn-primary">Back</a> -->
+    <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+
+
+{% endblock %}
